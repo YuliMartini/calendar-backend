@@ -5,7 +5,7 @@ const isDate = (value) => {
     return false;
   }
 
-  return isValid(value) ? true : false;
+  return isValid(new Date(value)) ? true : false;
 };
 
 module.exports = { isDate };

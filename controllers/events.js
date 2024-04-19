@@ -27,7 +27,7 @@ const createEvent = async (req, res = response) => {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "An error has occured. Contact your administrator",
+      msg: "Ha ocurrido un error. Contacte a su administrador",
     });
   }
 };
@@ -42,14 +42,14 @@ const updateEvent = async (req, res = response) => {
     if (!event) {
       return res.status(404).json({
         ok: false,
-        msg: "An event with the provided id does not exist",
+        msg: "No existe un evento con el id",
       });
     }
 
     if (event.user.toString() !== uid) {
       return res.status(401).json({
         ok: false,
-        msg: "User does not have permission to edit this event",
+        msg: "Usuario no tiene permiso para editar este evento",
       });
     }
 
@@ -70,7 +70,7 @@ const updateEvent = async (req, res = response) => {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "An error has occured. Contact your administrator",
+      msg: "Ha ocurrido un error. Contacte a su administrador",
     });
   }
 };
@@ -85,14 +85,14 @@ const deleteEvent = async (req, res = response) => {
     if (!event) {
       return res.status(404).json({
         ok: false,
-        msg: "An event with the provided id does not exist",
+        msg: "No existe un evento con el id",
       });
     }
 
     if (event.user.toString() !== uid) {
       return res.status(401).json({
         ok: false,
-        msg: "User does not have permission to delete this event",
+        msg: "Usuario no tiene permiso para eliminar este evento",
       });
     }
 
@@ -100,13 +100,13 @@ const deleteEvent = async (req, res = response) => {
 
     res.json({
       ok: true,
-      msg: "Event deleted successfully",
+      msg: "Evento eliminado",
     });
   } catch (error) {
     console.log(error);
     res.status(500).json({
       ok: false,
-      msg: "An error has occured. Contact your administrator",
+      msg: "Ha ocurrido un error. Contacte a su administrador",
     });
   }
 };

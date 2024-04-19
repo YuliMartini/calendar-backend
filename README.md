@@ -3,4 +3,5 @@
 ## Run project:
 
 1. `npm install`
-2. `npm run dev` - you'll need to have **nodemon** installed globally
+2. Configure environment (see `.env.example` file)
+3. `npm run dev`

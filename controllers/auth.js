@@ -12,7 +12,7 @@ const loginUser = async (req, res = response) => {
     if (!user) {
       return res.status(400).json({
         ok: false,
-        msg: "User doesn't exists",
+        msg: "El usuario no existe",
       });
     }
 
@@ -22,7 +22,7 @@ const loginUser = async (req, res = response) => {
     if (!validPassword) {
       return res.status(400).json({
         ok: false,
-        msg: "Incorrect password",
+        msg: "Contraseña incorrecta",
       });
     }
 
@@ -38,7 +38,7 @@ const loginUser = async (req, res = response) => {
   } catch (error) {
     res.status(500).json({
       ok: false,
-      msg: "An error has occured. Contact your administrator",
+      msg: "Ha ocurrido un error. Contacte a su administrador",
     });
   }
 };
@@ -52,7 +52,7 @@ const createUser = async (req, res = response) => {
     if (user) {
       return res.status(400).json({
         ok: false,
-        msg: "Email already exists",
+        msg: "El email ya se encuentra registrado",
       });
     }
 
@@ -77,7 +77,7 @@ const createUser = async (req, res = response) => {
   } catch (error) {
     res.status(500).json({
       ok: false,
-      msg: "An error has occured. Contact your administrator",
+      msg: "Ha ocurrido un error. Contacte a su administrador",
     });
   }
 };
@@ -90,6 +90,8 @@ const renewToken = async (req, res = response) => {
 
   res.json({
     ok: true,
+    uid,
+    name,
     token,
   });
 };
